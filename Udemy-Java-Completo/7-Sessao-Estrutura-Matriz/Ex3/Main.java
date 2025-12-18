@@ -1,6 +1,4 @@
-
 import java.util.Scanner;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +7,6 @@ public class Main {
 
         char operacao = sc.next().toLowerCase().charAt(0);
 
-        //Preencher matriz
         for (int linha = 0; linha < mat.length; linha++){
             for (int coluna = 0; coluna < mat[linha].length; coluna++){
                 mat[linha][coluna] = sc.nextDouble();
@@ -21,13 +18,13 @@ public class Main {
 
         for (int linha = 0; linha < mat.length; linha++){
             for (int coluna = 0; coluna < mat[linha].length; coluna++){
-                if (coluna < linha && coluna + linha > 11){
+                if (coluna < linha && linha + coluna < 11){
                     soma += mat[linha][coluna];
                     quantidade++;
                 }
             }
         }
-        
+
         if (operacao == 's'){
             System.out.printf("%.1f\n", soma);
         }
